@@ -1,0 +1,18 @@
+    private int id;
+    private String name;
+    private String address;
+    private int phoneNo;
+    private String idProof;
+    private int emergencyContactNumber;
+    private LocalDate leavingDate;
+    private String accessCardDetails;
+    private int roomNo;
+    private boolean isActive;
+    private String propertyName;
+    private int roomRent;
+    private LocalDate joiningDate;
+    private String email;
+
+
+    new UserDto("sourabh","sdf",900993,"asfasdf",2134123,null,"afgafg2342sfg",3,false,"vijay pg 1",7500,"ankush1975@gnnasdffgsfal.ocvm")
+    new UserDto("ankush","bhiwani",900993,"beta hai mera",2134123,null,"afgafg2342sfg",3,true,"vijay pg",7500,null,"ankush1975@gmial.ocvm")
