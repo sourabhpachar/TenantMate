@@ -1,17 +1,13 @@
 package com.TenantMate.Services.Impl;
 
-import com.TenantMate.Entity.User;
-import com.TenantMate.PayLoads.UserDto;
-import com.TenantMate.Repository.UserRepository;
+import com.TenantMate.payload.UserDto;
+import com.TenantMate.repository.UserRepository;
 import jakarta.validation.Valid;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class UserServiceImplTest {

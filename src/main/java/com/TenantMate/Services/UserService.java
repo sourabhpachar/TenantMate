@@ -1,7 +1,6 @@
 package com.TenantMate.Services;
 
-import com.TenantMate.Entity.User;
-import com.TenantMate.PayLoads.UserDto;
+import com.TenantMate.payload.UserDto;
 
 import java.util.List;
 

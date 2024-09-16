@@ -1,4 +1,4 @@
-package com.TenantMate.Entity;
+package com.TenantMate.entity;
 
 
 import jakarta.persistence.*;
@@ -6,6 +6,7 @@ import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Table(name="users" ,uniqueConstraints = {@UniqueConstraint(name = "email_unique", columnNames = "email")})
 @Entity
@@ -33,8 +34,7 @@ public class User {
     @CreationTimestamp
     private LocalDate joiningDate;
     private String email;
-
-
+//    private List<Role> roles;
 
 
 

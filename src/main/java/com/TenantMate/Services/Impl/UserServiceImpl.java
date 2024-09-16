@@ -1,8 +1,9 @@
 package com.TenantMate.Services.Impl;
 
-import com.TenantMate.Entity.User;
-import com.TenantMate.PayLoads.UserDto;
-import com.TenantMate.Repository.UserRepository;
+import com.TenantMate.entity.User;
+import com.TenantMate.exception.UserNotFoundException;
+import com.TenantMate.payload.UserDto;
+import com.TenantMate.repository.UserRepository;
 import com.TenantMate.Services.UserService;
 import jakarta.validation.Valid;
 import lombok.Data;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Data
@@ -30,13 +32,15 @@ public class UserServiceImpl implements UserService {
         return UserToDto(savedUser);
     }
 
-    public UserDto findUserById(Integer id){
-        User  findUser =userRepository.findById(id).get();
-        return UserToDto(findUser);
+    public UserDto findUserById (Integer id){
+        Optional<User> findUser =userRepository.findById(id);
+
+        return UserToDto(findUser.orElse(null));
     }
 
     public UserDto findUserByUsername(String email){
         User  findUser =userRepository.findByEmail(email);
+
         return UserToDto(findUser);
     }
 
@@ -107,6 +111,9 @@ public class UserServiceImpl implements UserService {
        return user;
     }
     public UserDto UserToDto(User user){
+        if(user==null)
+            return null;
+
         UserDto userDto=mapper.map(user,UserDto.class);
         return userDto;
     }

@@ -1,13 +1,9 @@
-package com.TenantMate.PayLoads;
+package com.TenantMate.payload;
 
-import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Future;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Size;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.validation.annotation.Validated;
 
 import java.time.LocalDate;
 
@@ -20,7 +16,7 @@ import java.time.LocalDate;
 public class UserDto {
 
     private int id;
-    @Size(min=10,message = "enter minimum 10 characters")
+    @Size(min=5,message = "enter minimum 5 characters")
     private String name;
 
     @Size(min=10,message = "enter minimum 10 characters")
@@ -28,7 +24,7 @@ public class UserDto {
     private int phoneNo;
     private String idProof;
     private int emergencyContactNumber;
-    @Future
+    @Future(message = "leaving date should be in future")
     private LocalDate leavingDate;
     private String accessCardDetails;
     private int roomNo;
@@ -36,7 +32,7 @@ public class UserDto {
     private String propertyName;
     private int roomRent;
     private LocalDate joiningDate;
-    @Email
+    @Email(message = "please enter valid email id")
     private String email;
 
     public UserDto(String name, String address, int phoneNo, String idProof, int emergencyContactNumber, LocalDate leavingDate, String accessCardDetails, int roomNo, boolean isActive, String propertyName, int roomRent, String email) {
