@@ -1,4 +1,4 @@
-package com.TenantMate.Services.Impl;
+package com.TenantMate.service.impl;
 
 import com.TenantMate.payload.UserDto;
 import com.TenantMate.repository.UserRepository;

@@ -1,10 +1,9 @@
-package com.TenantMate.Services.Impl;
+package com.TenantMate.service.impl;
 
 import com.TenantMate.entity.User;
-import com.TenantMate.exception.UserNotFoundException;
 import com.TenantMate.payload.UserDto;
 import com.TenantMate.repository.UserRepository;
-import com.TenantMate.Services.UserService;
+import com.TenantMate.service.UserService;
 import jakarta.validation.Valid;
 import lombok.Data;
 import org.modelmapper.ModelMapper;

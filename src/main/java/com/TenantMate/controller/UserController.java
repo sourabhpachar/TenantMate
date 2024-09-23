@@ -2,7 +2,7 @@ package com.TenantMate.controller;
 
 import com.TenantMate.exception.UserNotFoundException;
 import com.TenantMate.payload.UserDto;
-import com.TenantMate.Services.Impl.UserServiceImpl;
+import com.TenantMate.service.impl.UserServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

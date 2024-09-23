@@ -1,4 +1,4 @@
-package com.TenantMate.Services;
+package com.TenantMate.service;
 
 import com.TenantMate.payload.UserDto;
 
