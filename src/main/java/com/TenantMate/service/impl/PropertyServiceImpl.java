@@ -2,11 +2,13 @@ package com.TenantMate.service.impl;
 
 import com.TenantMate.entity.Facilities;
 import com.TenantMate.entity.Property;
+import com.TenantMate.entity.Room;
 import com.TenantMate.payload.FacilitiesDTO;
 import com.TenantMate.payload.PropertyDTO;
 import com.TenantMate.repository.FacilitiesRepository;
 import com.TenantMate.repository.PropertiesRepository;
 import com.TenantMate.service.PropertyService;
+import com.TenantMate.service.RoomService;
 import com.TenantMate.utility.EntityToDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +25,8 @@ public class PropertyServiceImpl implements PropertyService {
     @Autowired
     FacilitiesRepository facilityRepo;
 
+    RoomService roomService;
+
     public String addProperty(Property property) {
         Set<Facilities> existingFacilities = new HashSet<>();
         for (Facilities facility : property.getFacilities()) {
@@ -31,6 +35,10 @@ public class PropertyServiceImpl implements PropertyService {
         }
         property.setFacilities(existingFacilities);
         Property save = propertyRepo.save(property);
+        for(int i=0;i<save.getNumberOfRooms();i++){
+            Room room=new Room();
+            System.out.println(roomService.CreateRoom(room));
+        }
         return "Success, id: " + save.getPropertyId();
     }
 
