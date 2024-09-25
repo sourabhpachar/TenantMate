@@ -27,6 +27,7 @@ public class User {
     private int emergencyContactNumber;
     private LocalDate leavingDate;
     private String accessCardDetails;
+
     private int roomNo;
     private boolean isActive;
     private String propertyName;

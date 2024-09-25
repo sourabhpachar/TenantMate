@@ -13,7 +13,7 @@ public class PropertyDTO {
     private long ownerPhoneNo;
     private int numberOfFloors;
     private int numberOfRooms;
-    private int roomsOccupied;
+    //private int roomsOccupied;
     private String careTakerName;
     private long careTakerPhoneNo;
     private AddressDTO address;

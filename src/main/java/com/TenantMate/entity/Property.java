@@ -21,7 +21,7 @@ public class Property {
     private int numberOfRooms;
 
 
-    private int roomsOccupied;
+   // private int roomsOccupied;
     private String careTakerName;
     private long careTakerPhoneNo;
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

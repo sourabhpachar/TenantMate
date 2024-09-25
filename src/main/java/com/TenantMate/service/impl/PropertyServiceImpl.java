@@ -37,6 +37,7 @@ public class PropertyServiceImpl implements PropertyService {
         Property save = propertyRepo.save(property);
         for(int i=0;i<save.getNumberOfRooms();i++){
             Room room=new Room();
+            
             System.out.println(roomService.CreateRoom(room));
         }
         return "Success, id: " + save.getPropertyId();
