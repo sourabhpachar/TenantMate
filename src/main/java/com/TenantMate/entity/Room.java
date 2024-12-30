@@ -24,9 +24,9 @@ public class Room {
     private Type roomType;
     private Furnishing furnishing;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "property")
-    private Property property;
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "propertyId")
+ //   private Property property;
 
 
 }

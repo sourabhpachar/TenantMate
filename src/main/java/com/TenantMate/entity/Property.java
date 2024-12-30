@@ -3,7 +3,9 @@ package com.TenantMate.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -21,7 +23,7 @@ public class Property {
     private int numberOfRooms;
 
 
-   // private int roomsOccupied;
+    private int roomsOccupied;
     private String careTakerName;
     private long careTakerPhoneNo;
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -30,4 +32,9 @@ public class Property {
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "propertyToFacilityMap", joinColumns = @JoinColumn(name = "propertyId", referencedColumnName = "propertyId"), inverseJoinColumns = @JoinColumn(name = "facilityId", referencedColumnName = "facilityId"))
     private Set<Facilities> facilities = new HashSet<>();
+
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @JoinColumn(name = "PropertyId")
+    private List<Room> rooms=new ArrayList<>(numberOfRooms);
+
 }
